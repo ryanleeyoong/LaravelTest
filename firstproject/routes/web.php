@@ -17,11 +17,12 @@ use App\Http\Controllers\ProductsController;
 //Route that sends back a view
 
 //Laravel 8 (New) recommended
-Route::get('/products', [ProductsController::class, 'index']); //[pass in controller, perform whatever is in the 'index' function]
-Route::get('/products/about', [ProductsController::class, 'about']); //[controller, method]
+// Route::get('/products', [ProductsController::class, 'index']); //[pass in controller, perform whatever is in the 'index' function]
 
-//Laravel 8 (Also New)
-Route::get('/products', 'App\Http\Controllers\ProductsController@index');
+// Route::get('/products/about', [ProductsController::class, 'about']); //[controller, method]
+
+// //Laravel 8 (Also New)
+// Route::get('/products', 'App\Http\Controllers\ProductsController@index');
 
 //Before Laravel 8 (deprecated)
 //Route::get('/products', 'ProductsController@index')
@@ -69,10 +70,16 @@ Route::get('/products', 'App\Http\Controllers\ProductsController@index');
 // )->where('name', '[a-zA-Z]+');
 
 //Pattern is string
+// Route::get(
+//     '/products/{name}/{id}',
+//     [ProductsController::class, 'show']
+// )->where([
+//     'name' => '[a-zA-Z]+',
+//     'id' => '[0-9]+'
+// ]);
+
+//Route naming 
 Route::get(
-    '/products/{name}/{id}',
-    [ProductsController::class, 'show']
-)->where([
-    'name' => '[a-zA-Z]+',
-    'id' => '[0-9]+'
-]);
+    '/products',
+    [ProductsController::class, 'index']
+)->name('products');

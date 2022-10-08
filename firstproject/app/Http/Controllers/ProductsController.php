@@ -9,12 +9,12 @@ class ProductsController extends Controller
     public function index()
     {
         //pass data to view 
-        $title = "Welcome to my Laravel 8 course";
-        $description = "Created by Ryannnnnn";
-        $data = [
-            'productOne' => 'iPhone',
-            'productTwo' => 'Samsung'
-        ];
+        // $title = "Welcome to my Laravel 8 course";
+        // $description = "Created by Ryannnnnn";
+        // $data = [
+        //     'productOne' => 'iPhone',
+        //     'productTwo' => 'Samsung'
+        // ];
 
         //1.compact  method = creating an array of the variable with its value
         // return view(
@@ -27,9 +27,12 @@ class ProductsController extends Controller
         //return view('products.index')->with('data', $data);
 
         //Directly in view
-        return view('products.index', [
-            'data' => $data
-        ]);
+        // return view('products.index', [
+        //     'data' => $data
+        // ]);
+
+        print_r(route('products'));
+        return view('products.index');
     }
 
     public function about()
