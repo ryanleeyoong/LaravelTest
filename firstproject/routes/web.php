@@ -48,3 +48,31 @@ Route::get('/products', 'App\Http\Controllers\ProductsController@index');
 // Route::get('/users', function () {
 //     return redirect('/'); //redirects users to homepage
 // });
+
+//Route Parameters
+// /products = all products
+// /products/productName
+// /products/productId
+
+//Route::get('/products/{name}', [ProductsController::class, 'show']);
+
+//Pattern is integer
+// Route::get(
+//     '/products/{id}',
+//     [ProductsController::class, 'show']
+// )->where('id', '[0-9]+');
+
+//Pattern is string
+// Route::get(
+//     '/products/{name}',
+//     [ProductsController::class, 'show']
+// )->where('name', '[a-zA-Z]+');
+
+//Pattern is string
+Route::get(
+    '/products/{name}/{id}',
+    [ProductsController::class, 'show']
+)->where([
+    'name' => '[a-zA-Z]+',
+    'id' => '[0-9]+'
+]);

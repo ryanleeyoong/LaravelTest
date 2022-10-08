@@ -7,13 +7,9 @@
 </head>
 <body>
     <h1>Hello Products</h1>
-    @foreach($data as $item)
-
     <p>
-        {{ $item }}
+        {{ $products }}
     </p>
-
-    @endforeach
   
 </body>
 </html>
