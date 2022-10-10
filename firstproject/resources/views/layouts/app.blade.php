@@ -18,12 +18,7 @@
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
-
-    <style>
-        .active {
-            color: red;
-        }
-    </style>
+    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>

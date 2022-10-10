@@ -10,4 +10,4 @@
 @while ($i < 10)
     <h1>{{ $i }}</h1>
     {{ $i++ }}
-@endwhile
+@endwhilels
